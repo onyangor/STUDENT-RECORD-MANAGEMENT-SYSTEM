@@ -13,7 +13,7 @@ This project implements a relational database system for managing student record
 
 ##  ERD Screenshot
 
-![ERD](my ERD diagram.png)
+![ERD](myERDdiagram.png)
 
 
 ##  Contents
