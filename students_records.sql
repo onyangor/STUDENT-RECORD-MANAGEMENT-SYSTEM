@@ -2,6 +2,11 @@
 -- Created by RAY OTIENO
 -- Description: Creates the structure for managing students, courses, instructors, and grades.
 
+
+-- Create database
+CREATE DATABASE student;
+USE student;
+
 -- Drop existing tables if they exist
 DROP TABLE IF EXISTS grades, enrollments, users, students, courses, instructors, departments;
 
@@ -49,7 +54,7 @@ CREATE TABLE enrollments (
     enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
     student_id INT NOT NULL,
     course_id INT NOT NULL,
-    enrollment_date DATE DEFAULT CURRENT_DATE,
+    enrollment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(student_id, course_id),
     FOREIGN KEY (student_id) REFERENCES students(student_id),
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
@@ -114,4 +119,3 @@ INSERT INTO grades (enrollment_id, grade) VALUES
 INSERT INTO users (username, password_hash, role) VALUES
 ('admin', 'hashedpassword123', 'Admin'),
 ('instructor1', 'hashedpassword456', 'Instructor');
-
